@@ -6,11 +6,9 @@
 
 (function testAddNoteList() {
   var notelist = new NoteList()
-  // var noteOne = new Note('hello')
-  // var noteTwo = new Note('test')
   notelist.add('hello')
   notelist.add('test')
-  console.log(notelist.notes.text)
+  console.log(notelist.notes)
   assert.isTrue(notelist.notes.length === 2)
   assert.isTrue(notelist.notes[0].showNote() === 'hello')
   console.log('addNoteList test passing')
