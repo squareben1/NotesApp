@@ -5,8 +5,8 @@
 
   Note.prototype.showNote = function() {
     return this.text;
-    
   }
+  
   exports.Note = Note
 })(this)
 
