@@ -5,11 +5,14 @@
   }
 
   NoteListView.prototype.htmlList = function() {
-    var string = '<ul>Your Notes: <li><div>' + this.stringList.join('</div></li><li><div>') +'</div></li></ul>'
+    if (this.stringList.length === 0) {
+      return 'No notes available'
+    } else {
+      var string = '<ul>Your Notes: <li><div>' + this.stringList.join('</div></li><li><div>') +'</div></li></ul>'
+      return string 
+    }
     
-    document.querySelector('.notes').innerHTML = string
-    return string 
   }
 
   exports.NoteListView = NoteListView
-})(this)
+})(this);

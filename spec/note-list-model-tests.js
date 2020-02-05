@@ -8,8 +8,6 @@
   var notelist = new NoteList()
   notelist.add('hello')
   notelist.add('test')
-  console.log('notelist.notes:')
-  console.log(notelist.notes)
   assert.isTrue(notelist.notes.length === 2)
   assert.isTrue(notelist.notestext.length === 2)
   assert.isTrue(notelist.notestext[0] === 'hello')
@@ -21,8 +19,6 @@
   
   notelist.add('hello')
   notelist.add('test')
-  console.log('notel ist model show notes:')
-  console.log(notelist.showNotes())
   assert.isTrue(notelist.showNotes()[0].text == 'hello')
   assert.isTrue(notelist.showNotes()[1].text == 'test')
   console.log("listNotes showNotes test passing")
