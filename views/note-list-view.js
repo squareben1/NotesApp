@@ -5,13 +5,22 @@
   }
 
   NoteListView.prototype.htmlList = function() {
-    // console.log('stringlist arr', this.stringList.showNotes())
+    let output = []
+    let listLength = this.stringList.notes.length
     if (this.stringList.notes.length === 0) {
       return 'No notes available'
     } else {
-      var string = '<ul>Your Notes: <li><div>' + this.stringList.showNotes().join('</div></li><li><div>') +'</div></li></ul>'
-      return string 
+      for (let i = 0; i < listLength; i++) {
+        var id = this.stringList.notes[i].id
+        output.push(`<li><a href="#notes/${id}">${this.stringList.showNotes()[i]}</a></li>`)
+      }
+      return `<ul>Your Notes: ${output.join("")}</ul>`
     }
+    
+    // else {
+    //   var string = `<ul>Your Notes: <li><a href${this.stringlist[]}>` + this.stringList.showNotes().join('</div></li><li><div>') +'</div></li></ul>'
+    //   return string 
+    // }
   }
 
   exports.NoteListView = NoteListView
