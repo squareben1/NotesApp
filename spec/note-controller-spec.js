@@ -31,12 +31,13 @@
   assert.isTrue(document.getElementById('app').innerHTML.includes('Favourite drink: sel'))
 })();
 
-// (function() {
-//   var notelist = new NoteList()
-//   var notecontroller = new NoteController(notelist)
-//   var expectedContent = notecontroller.notelist.notes[0].text
-//   window.location.hash = "#notes/0"
-//   notecontroller.makeUrlChangeShowNoteForCurrentPage()
-//   assert.isTrue(document.getElementById('app').innerHTML.includes(expectedContent))
+(function() {
+  var notelist = new NoteList()
+  var notecontroller = new NoteController(notelist)
+  var expectedContent = notecontroller.notelist.notes[0].text
+  window.location.hash = "#notes/0"
+  notecontroller.makeUrlChangeShowNoteForCurrentPage()
+  console.log(document.getElementById('app'))
+  assert.isTrue(document.getElementById('app').innerHTML.includes(expectedContent))
 
-// })();
+})();
