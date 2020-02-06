@@ -33,5 +33,8 @@
   var notelist = new NoteList()
   notelist.add('hello')
   assert.isTrue(notelist.notes[0].id === 0)
+  notelist.add('test')
+  assert.isTrue(notelist.notes[1].id !== 0)
+  assert.isTrue(notelist.notes[1].id === 1)
   console.log('add function passes id to note obj')
 })(); 
