@@ -2,15 +2,18 @@
   function NoteController(notelist) {
     this.notelist = notelist
     this.notelist.add('Favourite drink: seltzer')
-    // this.view = new NoteListView(this.notelist)
+    this.view = new NoteListView(this.notelist)
   }
-  console.log('before call changeText')
-  console.log(document.getElementById('app'))
 
     NoteController.prototype.changeText = function(text) {
       var element = document.getElementById('app')
       element.innerHTML = text
-      console.log("inside chagetext", element)
+    }
+
+    NoteController.prototype.insertHTML = function() {
+      var element = document.getElementById('app')
+      element.innerHTML = this.view.htmlList()
+      
     }
 
     // var noteController = function(listmodel) {
@@ -23,7 +26,9 @@
   
 })(this);
 
-// noteController.changeText('Ben is the best!')
+// notelist = new NoteList
+// noteController = new NoteController(notelist)
+// noteController.insertHTML()
 
 // console.dir("NoteController", NoteController)
 // console.log('---')
