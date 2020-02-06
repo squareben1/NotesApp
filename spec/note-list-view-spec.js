@@ -11,7 +11,7 @@
   var notelist = new NoteList()
   notelist.add('hello')
   var notelistview = new NoteListView(notelist)
-  assert.isTrue(notelistview.htmlList() == '<ul>Your Notes: <li><div>hello</div></li></ul>')
+  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><div>hello</div></li></ul>')
   console.log("NoteListView Single note test passed")
 })();
 
@@ -21,3 +21,12 @@
   assert.isTrue(notelistview.htmlList() == 'No notes available')
   console.log("NoteListView No Note test passed")
 })();
+
+(function() {
+  var notelist = new NoteList()
+  notelist.add('first 20 characters! From here is more than 20 characters')
+  var notelistview = new NoteListView(notelist)
+  console.log('htmllist: ', notelistview.htmlList())
+  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><div>first 20 characters!</div></li></ul>')
+  console.log("Code updated and shows just first 20 characters of note")
+})()

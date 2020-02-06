@@ -15,10 +15,16 @@
 
 (function listNotes() {
   var notelist = new NoteList()
-  
   notelist.add('hello')
   notelist.add('test')
   assert.isTrue(notelist.showNotes()[0] == 'hello')
   assert.isTrue(notelist.showNotes()[1] == 'test')
   console.log("listNotes showNotes returns arr of note strings")
 })();
+
+(function() {
+  var notelist = new NoteList()
+  notelist.add('first 20 characters! From here is more than 20 characters')
+  assert.isTrue(notelist.showNotes()[0] == 'first 20 characters!')
+  console.log('showNotes adds just first chars')
+})()

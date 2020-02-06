@@ -28,5 +28,5 @@
   divDouble.appendChild(textContent)
   document.body.appendChild(divDouble)
   notecontroller.insertHTML()
-  assert.isTrue(document.getElementById('app').innerHTML.includes('Favourite drink: seltzer'))
+  assert.isTrue(document.getElementById('app').innerHTML.includes('Favourite drink: sel'))
 })();
