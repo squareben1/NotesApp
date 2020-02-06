@@ -15,7 +15,6 @@
 (function() {
   var notelist = new NoteList()
   var notecontroller = new NoteController(notelist)
-  console.log('view stringlist', notecontroller.view.stringList)
   assert.isTrue(notecontroller.view.stringList === notelist)
   console.log("NoteController creates new view obj, passing in the notelist")
 })();
@@ -28,9 +27,6 @@
   var textContent = document.createTextNode('Hello')
   divDouble.appendChild(textContent)
   document.body.appendChild(divDouble)
-  console.log('divdouble post text:', divDouble)
-  console.log('notecontroller.view:', notecontroller.view)
-  // console.log('textcontent', document.getElementById('app').textContent)
   notecontroller.insertHTML()
   assert.isTrue(document.getElementById('app').innerHTML.includes('Favourite drink: seltzer'))
 })();
