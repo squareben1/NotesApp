@@ -10,7 +10,7 @@
   notelist.add('test')
   assert.isTrue(notelist.notes.length === 2)
   assert.isTrue(notelist.notes[0].text === 'hello')
-  console.log('addNoteList add func adds 2 notes to arr')
+  console.log('addNoteList add func adds 2 notes to arr, with text attributes')
 })();
 
 (function listNotes() {
@@ -27,4 +27,11 @@
   notelist.add('first 20 characters! From here is more than 20 characters')
   assert.isTrue(notelist.showNotes()[0] == 'first 20 characters!')
   console.log('showNotes adds just first chars')
-})()
+})();
+
+(function() {
+  var notelist = new NoteList()
+  notelist.add('hello')
+  assert.isTrue(notelist.notes[0].id === 0)
+  console.log('add function passes id to note obj')
+})(); 
