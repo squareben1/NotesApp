@@ -16,6 +16,27 @@
       
     }
 
+    NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
+        window.addEventListener("hashchange", this.showNoteForCurrentPage());
+      };
+
+      NoteController.prototype.showNoteForCurrentPage = function() {
+        this.showNote(this.getNoteFromUrl(window.location));
+      };
+
+      NoteController.prototype.getNoteFromUrl = function(location) {
+        // location.hash.split("#notes/") >> ["", "0"]
+        // location.hash.split("#notes/")[1] >> 0 (the ID of the note)
+        return location.hash.split("#notes/")[1];
+      };
+
+      NoteController.prototype.showNote = function(noteId) {
+        var noteText = this.notelist.notes[noteId].text
+        document
+          .getElementById("app")
+          .innerHTML = noteText;
+      };
+
     // var noteController = function(listmodel) {
     //   return new NoteController(listmodel)
     // }
