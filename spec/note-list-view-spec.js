@@ -3,8 +3,8 @@
   notelist.add('hello')
   notelist.add('test')
   var notelistview = new NoteListView(notelist)
-  console.log('notelist view', notelistview.htmlList())
-  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><a href="#notes/0">hello</a></li><li><a href="#notes/1">test</a></li></ul>')
+  console.log('notelistview.htmlList(): ', notelistview.htmlList())
+  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><a id="0" href="#notes/0">hello</a></li><li><a id="1" href="#notes/1">test</a></li></ul>')
   console.log("NoteListView multi notes atest passed")
 })();
 
@@ -12,7 +12,7 @@
   var notelist = new NoteList()
   notelist.add('hello')
   var notelistview = new NoteListView(notelist)
-  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><a href="#notes/0">hello</a></li></ul>')
+  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><a id="0" href="#notes/0">hello</a></li></ul>')
   console.log("NoteListView Single note test passed")
 })();
 
@@ -27,7 +27,6 @@
   var notelist = new NoteList()
   notelist.add('first 20 characters! From here is more than 20 characters')
   var notelistview = new NoteListView(notelist)
-  console.log('htmllist: ', notelistview.htmlList())
-  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><a href="#notes/0">first 20 characters!</a></li></ul>')
+  assert.isTrue(notelistview.htmlList() === '<ul>Your Notes: <li><a id="0" href="#notes/0">first 20 characters!</a></li></ul>')
   console.log("Code updated and shows just first 20 characters of note")
 })()

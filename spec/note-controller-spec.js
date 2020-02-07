@@ -32,12 +32,18 @@
 })();
 
 (function() {
-  var notelist = new NoteList()
+  var notelist = new NoteList
+  notelist.add('Favourite drink: champagne')
   var notecontroller = new NoteController(notelist)
-  var expectedContent = notecontroller.notelist.notes[0].text
-  window.location.hash = "#notes/0"
-  notecontroller.makeUrlChangeShowNoteForCurrentPage()
-  console.log(document.getElementById('app'))
-  assert.isTrue(document.getElementById('app').innerHTML.includes(expectedContent))
-
+  notecontroller.insertHTML()
+  // notecontroller.makeUrlChangeShowNoteForCurrentPage()
+  // window.location.hash = "#notes/0"
+  // document.getElementById('0').click()
+  // var expectedContent = notecontroller.notelist.notes[0].text
+  console.log('notes: ', notelist.notes)
+  console.log('app innerhtml: ', document.getElementById('app').innerHTML)
+  // console.log('expected content: ', expectedContent)
+  document.getElementById('0').click()
+  assert.isTrue(document.getElementById('app').innerHTML.includes('Favourite drink: champagne'))
+  console.log('Can click on a note and be redirected to the URL for that note.')
 })();

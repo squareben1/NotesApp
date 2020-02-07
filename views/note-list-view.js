@@ -12,7 +12,7 @@
     } else {
       for (let i = 0; i < listLength; i++) {
         var id = this.stringList.notes[i].id
-        output.push(`<li><a href="#notes/${id}">${this.stringList.showNotes()[i]}</a></li>`)
+        output.push(`<li><a id="${id}" href="#notes/${id}">${this.stringList.showNotes()[i]}</a></li>`)
       }
       return `<ul>Your Notes: ${output.join("")}</ul>`
     }
